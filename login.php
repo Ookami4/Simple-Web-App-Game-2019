@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 			
 			if($exist){
 				
-				header("Location: jeuPHP.php");
+				header("Location: game.php");
 				
 			}else{
 				$error = "username or password is incorrect";
