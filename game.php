@@ -7,7 +7,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 	
 	function saveBestScoreToFile($score) {
 
-		//Créer le fichier
+		
 		if (!file_exists('users.txt')) {
 			fclose(fopen('users.txt', 'w+'));
 		}
@@ -31,7 +31,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 	$showForm = True;
 
 	if (isset($_GET['exit'])) {
-		//We quit the game by deleting the data of the session
+		
 		session_unset();
 		header('Location: login.php');
 		exit;
@@ -64,15 +64,12 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 			
 			if ($diceroll == 1) {
 
-				//Check that this dice has not been thrown yet
-				//We check the data we already have in the session
-				//If we already have a result for the first dice.
 				if (isset($_SESSION['dice1'])) {
 
 					$error = 1;
 				} else {
 
-					//we check that the result obtained leaves a chance to win
+					
 					if ($res > 4) {
 						
 						$endGame = True;
@@ -84,15 +81,13 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 			} else if ($diceroll == 2) {
 
 
-				//Check that this dice has not been thrown yet
-				//We check the data we already have in the session
-				//If we already have a result for the second dice.
+				
 				if (isset($_SESSION['dice2'])) {
 
 					$error = 2;
 				} else {
 
-					//check that the result obtained is lower than the result of the dice 1 if it is already rolled
+					
 					if ((isset($_SESSION['dice1']) && $res <= $_SESSION['dice1'] ) ||  $res == 6 || $res==1) {
 
 						$endGame = True;
@@ -105,9 +100,6 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 			else {
 
 
-				//Check that this dice has not been thrown yet
-				//We check the data we already have in the session
-				//If we already have a result for the third dice.
 				if (isset($_SESSION['dice3'])) {
 
 					$error = 3;
