@@ -1,6 +1,6 @@
 <?php 
 
-//On démarre la session
+
 session_start();
 
 if(isset($_POST['submit'])){
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
 			
 		}
 		else {
-			// error opening the file.
+			
 			$error = "file error";
 		} 
 	}
