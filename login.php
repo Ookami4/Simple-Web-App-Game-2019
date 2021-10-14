@@ -18,7 +18,6 @@ if(isset($_POST['submit'])){
 					@$_SESSION['bestScore'] = $entry_array[2];
 					@$_SESSION['logged'] = true;
 					$exist = true;
-					$error = "find one";
 					break;
 				}
 			}
