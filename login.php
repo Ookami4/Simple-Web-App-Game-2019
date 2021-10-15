@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 				if ($entry_array[0] == $_POST['username'] && $entry_array[1] == $_POST['password']) {
 					@$_SESSION['username'] = $entry_array[0];
 					@$_SESSION['password'] = $entry_array[1];
-					@$_SESSION['bestScore'] = $entry_array[2];
+					@$_SESSION['bestScore'] = intval($entry_array[2]);
 					@$_SESSION['logged'] = true;
 					$exist = true;
 					break;
